@@ -26,16 +26,7 @@ public class HealthyPerson extends Person{
 	@Override
 	protected int compareToImpl(Person p) {
 		if (p instanceof HealthyPerson) {
-			if (this.getName().compareTo(p.getName()) < 0) {
-				//if self name is lower value it is alphabetically first and is therefor returning a -1
-				return -1;
-			}
-			else if(this.getName().compareTo(p.getName()) > 0) {
-				return 1;
-			}
-			else {
-				return 0;
-			}
+			return this.getName().compareTo(p.getName());
 		}
 		//if this is being compared to SickPerson, return 1 putting self afterwords in order or precedence to remain consistent. 
 		else {

@@ -3,7 +3,11 @@ import java.util.Collections;
 
 public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital<PatientType> {
 	
-	private ArrayList<PatientType> patients = new ArrayList<PatientType>();
+	private ArrayList<PatientType> patients;
+	
+	public PriorityQueueHospital() {
+		patients = new ArrayList<>();
+	}
 
 	@Override
 	public void addPatient(PatientType patient) {

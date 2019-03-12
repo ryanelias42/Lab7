@@ -2,8 +2,12 @@ import java.util.ArrayList;
 
 public class StackHospital<PatientType> extends Hospital<PatientType> {
 	
-	private ArrayList<PatientType> patients = new ArrayList<>();
+	private ArrayList<PatientType> patients;
 	
+	public StackHospital() {
+		
+		 patients = new ArrayList<>();
+	}
 	
 	@Override
 	public void addPatient(PatientType patient) {

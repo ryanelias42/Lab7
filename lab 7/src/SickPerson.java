@@ -28,28 +28,14 @@ public class SickPerson extends Person {
 	@Override
 	protected int compareToImpl(Person p) {
 		if (p instanceof SickPerson) {
-			//severity of self is less than severity of p
-			//return (1)
-			if(this.getSeverity() < ((SickPerson) p).getSeverity()) {
-					return 1;
-				}
-			//severity of self is greater than severity of p
-			//return (-1)
-			else if(this.getSeverity() > ((SickPerson) p).getSeverity()) {
-					return -1;
-				}
-			//severity of self and p are equal
-			//return 0
-			else {
-					return 0;
-				}
+			return -(this.getSeverity() - ((SickPerson)(p)).getSeverity());
+			
 		}
 		//if SickPerson is being compared to HealthyPerson (the only other subclass of person),
 		// SickPerson will take precedence by default. 
 		else {
 			return -1;
 		}
-		
 	}
 	
 	public String toString() {
