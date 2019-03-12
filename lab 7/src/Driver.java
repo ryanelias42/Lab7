@@ -179,21 +179,21 @@ public class Driver
                 	}
                 	break;
                 case "summary":
-                	for (Hospital hos : animalHospitals)
+                	for (Hospital<Animal> hos : animalHospitals)
                 	{
                 		System.out.println(hos);
                 	}
-                	for (Hospital hos : personHospitals)
+                	for (Hospital<Person> hos : personHospitals)
                 	{
                 		System.out.println(hos);
                 	}
                 	break;
                 case "patientlist":
-                	for (Hospital hos : animalHospitals)
+                	for (Hospital<Animal> hos : animalHospitals)
                 	{
                 		System.out.println(hos.allPatientInfo());
                 	}
-                	for (Hospital hos : personHospitals)
+                	for (Hospital<Person> hos : personHospitals)
                 	{
                 		System.out.println(hos.allPatientInfo());
                 	}
