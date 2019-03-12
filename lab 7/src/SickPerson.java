@@ -1,7 +1,7 @@
 
 public class SickPerson extends Person {
 	
-	public int severity;
+	private int severity;
 
 	public SickPerson(String name, int age, int severe) {
 		super(name, age);
