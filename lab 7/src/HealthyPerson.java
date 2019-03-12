@@ -35,7 +35,9 @@ public class HealthyPerson extends Person{
 	}
 	
 	public String toString() {
-		return String.format("%s, a %d-year old. Reason for visit: %s.", this.getName(), this.getAge(), this.getReason());
+		
+		return String.format("%s Reason for visit: %s.", super.toString(), this.getReason());
+
 	}
 
 }

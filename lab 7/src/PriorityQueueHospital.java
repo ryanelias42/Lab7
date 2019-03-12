@@ -12,7 +12,8 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	@Override
 	public void addPatient(PatientType patient) {
 		patients.add(patient);
-	}
+		Collections.sort(patients);
+		}
 
 	@Override
 	public PatientType nextPatient() {
@@ -47,6 +48,4 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 		return answer;
 	}
 	
-	
-
 }
