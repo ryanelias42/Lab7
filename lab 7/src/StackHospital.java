@@ -1,25 +1,25 @@
 import java.util.ArrayList;
 
-public class StackHospital extends Hospital {
+public class StackHospital<PatientType> extends Hospital<PatientType> {
 	
-	public ArrayList<Object> patients = new ArrayList<>();
-
+	public ArrayList<PatientType> patients = new ArrayList<>();
+	
+	
 	@Override
-	// adds new patient at the end of the list
-	public void addPatient(Object patient) {
+	public void addPatient(PatientType patient) {
 		patients.add(patient);
 	}
-
+	
 	@Override
 	//returns patient that is at the end of the ArrayList
-	public Object nextPatient() {
+	public PatientType nextPatient() {
 		return patients.get(patients.size()-1);
 	}
 
 	@Override
 	//stores last patient into Object answer, removes last object from list, returns answer
-	public Object treatNextPatient() {
-		Object answer = patients.get(patients.size()-1);
+	public PatientType treatNextPatient() {
+		PatientType answer = patients.get(patients.size()-1);
 		patients.remove(patients.size()-1);
 		return answer;
 	}
@@ -38,7 +38,7 @@ public class StackHospital extends Hospital {
 	//runs for each loop that adds the toString of each object to the string answer and then returns answer
 	public String allPatientInfo() {
 		String answer = "";
-		for (Object x: patients) {
+		for (PatientType x: patients) {
 			answer+=x.toString();
 		}
 		return answer;

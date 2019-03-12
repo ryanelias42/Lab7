@@ -1,40 +1,43 @@
+import java.util.ArrayList;
 
-public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital {
+public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital<PatientType> {
+	
+	public ArrayList<PatientType> patients = new ArrayList<PatientType>();
 
 	@Override
-	public void addPatient(Object patient) {
-		// TODO Auto-generated method stub
-		
+	public void addPatient(PatientType patient) {
+		patients.add(patient);
 	}
 
 	@Override
-	public Object nextPatient() {
+	public PatientType nextPatient() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object treatNextPatient() {
+	public PatientType treatNextPatient() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int numPatients() {
-		// TODO Auto-generated method stub
-		return 0;
+		return patients.size();
 	}
 
 	@Override
 	public String hospitalType() {
-		// TODO Auto-generated method stub
-		return null;
+	return "PriorityQueueHospital";
 	}
 
 	@Override
 	public String allPatientInfo() {
-		// TODO Auto-generated method stub
-		return null;
+		String answer = "";
+		for (PatientType x: patients) {
+			answer+=x.toString();
+		}
+		return answer;
 	}
 	
 	
