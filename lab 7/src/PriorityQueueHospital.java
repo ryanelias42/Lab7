@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital<PatientType> {
 	
@@ -11,14 +12,16 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 
 	@Override
 	public PatientType nextPatient() {
-		// TODO Auto-generated method stub
-		return null;
+		Collections.sort(patients);
+		return patients.get(0);
 	}
 
 	@Override
 	public PatientType treatNextPatient() {
-		// TODO Auto-generated method stub
-		return null;
+		Collections.sort(patients);
+		PatientType x = patients.get(0);
+		patients.remove(0);
+		return x;
 	}
 
 	@Override
